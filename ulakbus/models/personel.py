@@ -132,7 +132,7 @@ class KurumDisiGorevlendirmeBilgileri(Model):
     gorev_tipi = field.Integer("Görev Tipi", index=True)
     kurum_disi_gorev_baslama_tarihi = field.Date("Baslama Tarihi", index=True, format="%d.%m.%Y")
     kurum_disi_gorev_bitis_tarihi = field.Date("Bitiş Tarihi", index=True, format="%d.%m.%Y")
-    aciklama = field.Text("Aciklama")
+    aciklama = field.Text("Aciklama", index=True)
     resmi_yazi_sayi = field.String("Resmi Yazi Sayi")
     resmi_yazi_tarih = field.Date("Resmi Yazi Tarihi", index=True, format="%d.%m.%Y")
     maas = field.Boolean("Maas")
@@ -150,6 +150,7 @@ class KurumDisiGorevlendirmeBilgileri(Model):
         list_search = ["aciklama"]
         list_fields = ["ulke", "gorev_tipi", "kurum_disi_gorev_baslama_tarihi"]
         list_filters = ["ulke", "gorev_tipi", "kurum_disi_gorev_baslama_tarihi"]
+        search_fields = ["aciklama",]
         form_grouping = [
             {
                 "layout": "4",
